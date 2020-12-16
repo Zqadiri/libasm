@@ -79,6 +79,7 @@ Register is a temporary storage or working location built into the CPU itself (s
 The 16 integer registers are 64 bits wide and are called:
 
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10  R11  R12  R13  R14  R15
+
 RAX RCX RDX RBX RSP RBP RSI RDI
 
 ![register use](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb702e9f1-0288-4928-88c5-a6f1bb1a5c9f%2FScreen_Shot_2020-12-13_at_10.09.54_AM.png?table=block&id=0de35174-906e-4a21-98bd-c9afa2b9f554&width=2560&userId=&cache=v2)
