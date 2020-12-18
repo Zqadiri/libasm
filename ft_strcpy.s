@@ -4,7 +4,7 @@
 ; 4th arg           Stack           ESI               RCX            R10
 ; 5th arg           Stack           EDI               R8             R8
 ; 6th arg           Stack           EBP               R9  
-
+; cl in the low byte of CX (16 bits)
 bits 64
 
 global ft_strcpy
