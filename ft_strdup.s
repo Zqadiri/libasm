@@ -7,6 +7,26 @@
 
 bits 64
 
-global ft_strcmp
-
 section .text
+
+global ft_strcmp
+extern ft_strlen
+extern _malloc
+extern ft_strcpy
+
+ft_strdup:
+    call ft_strlen   ; rax get the length of arg0
+    mov  rcx, rax    ; move the length to rcx
+    inc  rcx         ; inc rcx so we can add \0
+    push rdi         ; save the string address into the stack
+    mov  rdi, rcx
+    call _malloc
+    cmp  rax, 0
+    je   exit
+    pop  rsi 
+    mov  rdi, rax
+    call ft_strcpy
+    jmp  exit
+
+exit:
+    ret
