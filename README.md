@@ -21,7 +21,7 @@ https://www.ic.unicamp.br/~pannain/mc404/aulas/pdfs/Art%20Of%20Intel%20x86%20Ass
 
 http://ps-2.kev009.com/wisclibrary/aix52/usr/share/man/info/en_US/a_doc_lib/aixassem/alangref/pseudo_ops_ovrvw.htm
 
-
+https://medium.com/@jain.sm/invoking-a-system-call-via-assembly-84c9f8832105
 
 ## Assembly language :
 
