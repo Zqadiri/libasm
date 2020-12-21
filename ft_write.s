@@ -10,7 +10,7 @@ section .text
 
 _ft_write:
 	mov r8, rdx				; save rdx = len in r8
-	mov rax, 4		        ; set call to write
+	mov rax, 0x02000004		        ; set call to write
     syscall					; call rax (write)
 	jc exit_error		    ; if doesn't work, write set flags carry to 1 so jmp exit error
 	jmp exit				; jump exit

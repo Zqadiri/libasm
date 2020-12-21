@@ -9,7 +9,7 @@ section .text
     global _ft_read
 
 _ft_read:
-    mov rax, 3      ;  set call to read
+    mov rax,  0x02000003     ;  set call to read
     syscall         ; call rax (read)
     jc exit_error   ;  if doesn't work, read set flags carry to 1 so jmp exit error
     jmp exit
