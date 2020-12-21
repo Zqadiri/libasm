@@ -7,12 +7,12 @@
 ; cl in the low byte of CX (16 bits)
 bits 64
 
-global ft_strcpy
+global _ft_strcpy
 
 section .text
 ; ft_strcpy(arg0 = rdi = dst, arg1 = rsi = src)
 ; rdi will be dest and rsi will be src
-ft_strcpy:
+_ft_strcpy:
     ; we set rax to zero
     mov rax, 0                  
 loop:

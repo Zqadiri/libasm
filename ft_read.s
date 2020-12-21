@@ -6,9 +6,9 @@
 ; https://fasterthanli.me/series/reading-files-the-hard-way/part-2
 
 section .text
-    global ft_read
+    global _ft_read
 
-ft_read:
+_ft_read:
     mov rax, 3      ;  set call to read
     syscall         ; call rax (read)
     jc exit_error   ;  if doesn't work, read set flags carry to 1 so jmp exit error

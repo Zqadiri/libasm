@@ -6,7 +6,7 @@
 #    By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/18 16:54:47 by zqadiri           #+#    #+#              #
-#    Updated: 2020/12/20 17:12:36 by zqadiri          ###   ########.fr        #
+#    Updated: 2020/12/20 17:37:06 by zqadiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,10 @@ $(NAME):
 	nasm -f macho64 ft_read.s -o ft_read.o;
 	nasm -f macho64 ft_write.s -o ft_write.o;
 	ar -rc $(NAME) $(OBJ) && ranlib $(NAME)
+
+try: all
+	gcc -Wall -Wextra -Werror -I./libasm.h libasm.a main.c -o try_libasm
+	./try_libasm
 
 re: fclean $(NAME)
 

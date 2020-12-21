@@ -19,11 +19,11 @@
 
 bits 64
 
-global ft_strcmp
+global _ft_strcmp
 
 section .text
 
-ft_strcmp:
+_ft_strcmp:
 	mov 	rax, 0		; set rax to 0
 	jmp		compare		; call compare
 

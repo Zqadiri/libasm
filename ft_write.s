@@ -6,9 +6,9 @@
 ; https://fasterthanli.me/series/reading-files-the-hard-way/part-2
 
 section .text
-    global ft_write
+    global _ft_write
 
-ft_write:
+_ft_write:
 	mov r8, rdx				; save rdx = len in r8
 	mov rax, 4		        ; set call to write
     syscall					; call rax (write)
