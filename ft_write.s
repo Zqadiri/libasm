@@ -6,19 +6,19 @@
 ; https://fasterthanli.me/series/reading-files-the-hard-way/part-2
 
 section .text
-    global _ft_write
+
+	global _ft_write
+	extern ___error
 
 _ft_write:
-	mov r8, rdx				; save rdx = len in r8
-	mov rax, 0x02000004		        ; set call to write
-    syscall					; call rax (write)
-	jc exit_error		    ; if doesn't work, write set flags carry to 1 so jmp exit error
-	jmp exit				; jump exit
+    mov rax,  0x02000004    ;  set call to write
+    syscall                 ; call rax (write)
+    jc exit_error           ;  if doesn't work, write set flags carry to 1 so jmp exit error
+   	ret
 
 exit_error:
-	mov rax, -1				; set return to -1
-	ret						; return
-
-exit:
-	mov rax, r8				; set previous value of rdx save in r8, in return value
+    push rax                ; save errno in the top of the stack 
+    call ___error           ; rax is now points to external variable errno.
+    pop qword[rax]          ; The QWORD PTR is just a size specifier (It means that a 64 bit value is read from the address)
+    mov 	rax, -1			; set return to -1  
 	ret						; return 

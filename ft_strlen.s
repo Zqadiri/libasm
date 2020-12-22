@@ -5,7 +5,6 @@
 ; 5th arg           Stack           EDI               R8             R8
 ; 6th arg           Stack           EBP               R9  
 
-
 global _ft_strlen
 
 section .text
@@ -25,7 +24,7 @@ start:
     inc rax
     ; jump to strlen and start again with rax + 1
     jmp start
-    
+ 
 exit:
     ;return rax
     ret

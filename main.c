@@ -6,7 +6,7 @@
 /*   By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 17:13:33 by zqadiri           #+#    #+#             */
-/*   Updated: 2020/12/22 12:55:43 by zqadiri          ###   ########.fr       */
+/*   Updated: 2020/12/22 13:49:26 by zqadiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void clear_buffer(char *buffer, int size)
 void check_strcpy()
 {
 	char buffer[50];
-	
 	char *empty = "";
 	char *hello_world = "Hello world !";
 	char *alphabet = "abcdefghijklmnopqrstuvwxyz1233454";
@@ -111,8 +110,6 @@ void check_write()
 	printf("========== FT_WRITE ============\n");
 	printf("================================\n\n");
 
-
-	
 	printf("%-20s: \"%s\"\n", "char *", hello_world);
 	printf("\n");
 	printf("\tLibc:%zu\n", write(1, hello_world, 11));
@@ -129,15 +126,14 @@ void check_write()
 	
 	printf("%-20s: \"%s\"\n", "char *", hello_world);
 	printf("\n");
-	printf("\tLibc:%zu\n", write(-7, NULL, 7));
+	printf("Libc:%zu\n", write(-7, NULL, 7));
 	printf("\n");
-	printf("\tLibasm:%zu\n",  ft_write(-7, NULL, 7));
+	printf("Libasm:%zu\n",  ft_write(-7, NULL, 7));
 	printf("\n");	
 }
 
 void check_read()
 {
-	int fd = open("main.c", O_RDONLY);
 	char buff1[891];
 	int ret = 1;
 	printf("\n================================\n");
@@ -146,49 +142,48 @@ void check_read()
 	
 	printf("%-20s: \n", "wrong file descriptor | libc ");
 	ret = read(-7, buff1, 890);
-
 	printf("[return : %d]\n|%s|\n", ret, buff1);
 	printf("\n");
-
-	clear_buffer(buff1, 890);
+	clear_buffer(buff1, 891);
 	printf("%-20s: \n", "wrong file descriptor | libasm ");
 	ret = ft_read(-7, buff1, 890);
-
 	printf("[return : %d]\n|%s|\n", ret, buff1);
 	printf("\n");
-	clear_buffer(buff1, 890);
+	clear_buffer(buff1, 891);
 	
+	int fd = open("main.c", O_RDONLY);
 	printf("%-20s: \n", "header main.c | libc ");
 	ret = read(fd, buff1, 890);
 	buff1[ret] = 0;
 	printf("[return : %d]\n|%s|\n", ret, buff1);
 	printf("\n");
 	close(fd);
+	clear_buffer(buff1, 891);
+	
 	fd = open("main.c", O_RDONLY);
-	clear_buffer(buff1, 890);
 	printf("%-20s: \n", "header main.c | libasm ");
 	ret = ft_read(fd, buff1, 890);
 	buff1[ret] = 0;
 	printf("[return : %d]\n|%s|\n", ret, buff1);
 	printf("\n");
-	clear_buffer(buff1, 890);
 	close(fd);
+	clear_buffer(buff1, 891);
 
-	fd = open("test", O_RDONLY);
+	fd = open("test", O_RDONLY);	
 	printf("%-20s: \n", "file test | libc ");
 	ret = read(fd, buff1, 890);
 	buff1[ret] = 0;
 	printf("[return : %d]\n|%s|\n", ret, buff1);
 	printf("\n");
 	close(fd);
+	clear_buffer(buff1, 891);
 	fd = open("test", O_RDONLY);
-	clear_buffer(buff1, 890);
 	printf("%-20s: \n", "file test | libasm ");
 	ret = ft_read(fd, buff1, 890);
 	buff1[ret] = 0;
 	printf("[return : %d]\n|%s|\n", ret, buff1);
 	printf("\n");
-	clear_buffer(buff1, 890);
+	clear_buffer(buff1, 891);
 	close(fd);
 }
 
@@ -227,11 +222,11 @@ void check_strdup()
 
 int main()
 {	
-	check_strcpy();
+	// check_strcpy();
 	check_write();
-	check_read();
-	check_strdup();
-	check_strcpy();
-	check_strcmp();
-	check_strlen();
+	// check_read();
+	// check_strdup();
+	// check_strcpy();
+	// check_strcmp();
+	// check_strlen();
 }

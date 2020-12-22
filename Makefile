@@ -6,7 +6,7 @@
 #    By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/18 16:54:47 by zqadiri           #+#    #+#              #
-#    Updated: 2020/12/22 10:44:15 by zqadiri          ###   ########.fr        #
+#    Updated: 2020/12/22 13:46:35 by zqadiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,8 @@ $(NAME):
 	ar -rsc $(NAME) $(OBJ) && ranlib $(NAME)
 
 try: all
+	@touch test
+	@
 	gcc -Wall -Wextra -Werror -I./libasm.h libasm.a main.c -o try_libasm -fsanitize=address
 	./try_libasm
 
