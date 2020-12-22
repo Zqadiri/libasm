@@ -5,8 +5,9 @@
 ; This prevents userspace program to interfere with the kernel protection mechanisms.
 ; https://fasterthanli.me/series/reading-files-the-hard-way/part-2
 
-section .text
-    global _ft_read
+global _ft_read
+
+section .text    
 
 _ft_read:
     mov rax,  0x02000003     ;  set call to read

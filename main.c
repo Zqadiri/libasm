@@ -6,7 +6,7 @@
 /*   By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 17:13:33 by zqadiri           #+#    #+#             */
-/*   Updated: 2020/12/21 20:51:49 by zqadiri          ###   ########.fr       */
+/*   Updated: 2020/12/22 10:41:25 by zqadiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ void check_strlen()
 	printf("========== FT_STRLEN ===========\n");
 	printf("================================\n\n");
 	printf("%-20s: \"%s\"\n", "char *", empty);
-	printf("expected lenght\n");
+	printf("\n");
 	printf("%-20s: %zu\n", "libc", strlen(empty));	
 	printf("%-20s: %zu\n", "libasm", ft_strlen(empty));
 	printf("\n");
 	printf("%-20s: \"%s\"\n", "char *", hello_world);
-	printf("expected lenght\n");
+	printf("\n");
 	printf("%-20s: %zu\n", "libc", strlen(hello_world));	
 	printf("%-20s: %zu\n", "libasm", ft_strlen(hello_world));
 	printf("\n");
 	printf("%-20s: \"%s\"\n", "char *", alphabet);
-	printf("expected lenght\n");
+	printf("\n");
 	printf("%-20s: %zu\n", "libc", strlen(alphabet));	
 	printf("%-20s: %zu\n", "libasm", ft_strlen(alphabet));
 	printf("\n");
@@ -231,9 +231,9 @@ int main()
 {	
 	// check_strcpy();
 	// check_write();
-	// check_read();
+	check_read();
 	// check_strdup();
 	// check_strcpy();
 	// check_strcmp();
-	check_strlen();
+	// check_strlen();
 }
