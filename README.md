@@ -1,7 +1,12 @@
 # libasm
 The aim of this project is to get familiar with assembly language.
 
-###  Here's the line I use to get one of the nasm builds installed on macOS:
+###  Install nasm on macOS:
+
+```shell
+    brew install nasm
+```
+or :
 
 curl https://www.nasm.us/pub/nasm/releasebuilds/2.14.03rc2/macosx/nasm-2.14.03rc2-macosx.zip -o nasm.zip && unzip nasm.zip && rm nasm.zip && mv nasm* nasm && export PATH=~/nasm:$PATH
 
