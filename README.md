@@ -8,7 +8,9 @@ The aim of this project is to get familiar with assembly language.
 ```
 or :
 
+```shell
 curl https://www.nasm.us/pub/nasm/releasebuilds/2.14.03rc2/macosx/nasm-2.14.03rc2-macosx.zip -o nasm.zip && unzip nasm.zip && rm nasm.zip && mv nasm* nasm && export PATH=~/nasm:$PATH
+```
 
 ## SOme ressources :
 
@@ -87,7 +89,7 @@ The operand field's interpretation is dependent on the contents of the operation
 
 ##### The Three Kinds of Operands :
 
-* Register Operands :
+###### Register Operands :
 
 Register is a temporary storage or working location built into the CPU itself (separate from memory). they are processor components that hold data and address.  
 
@@ -99,7 +101,19 @@ RAX RCX RDX RBX RSP RBP RSI RDI
 
 ![register use](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbf260acc-e649-49d7-af6c-0d4ace24afa7%2FScreen_Shot_2020-12-11_at_12.40.51_PM.png?table=block&id=79ef15fd-d49d-4f77-8998-3d2084ed4996&width=2560&userId=&cache=v2)
 
+##### Memory Operands :
 
+These are the basic forms of addressing:
+
+* [ number ]
+* [ reg ]
+* [ reg + reg*scale ]      scale is 1, 2, 4, or 8 only
+* [ reg + number ]
+* [ reg + reg*scale + number ]
+
+The number is called the displacement; the plain register is called the base; the register with the scale is called the index.
+
+#### [Immediate operands](http://www.c-jump.com/CIS77/ASM/Instructions/I77_0170_immediate_operands.htm#:~:text=An%20immediate%20operand%20is%20a,the%20instruction%20at%20assembly%20time.&text=If%20the%20source%20operand%20is,the%20result%20of%20the%20operation.).
 
 
 
