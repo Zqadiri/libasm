@@ -7,9 +7,17 @@ curl https://www.nasm.us/pub/nasm/releasebuilds/2.14.03rc2/macosx/nasm-2.14.03rc
 
 ## SOme ressources :
 
+full tutorials:
+
 https://cs.lmu.edu/~ray/notes/nasmtutorial/
 
 https://www.tutorialspoint.com/assembly_programming/index.htm
+
+others:
+
+https://www.cs.virginia.edu/~evans/cs216/guides/x86.html
+
+http://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf
 
 https://www.cs.uaf.edu/2015/fall/cs301/lecture/09_16_stack.html
 
@@ -20,6 +28,8 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 https://www.ic.unicamp.br/~pannain/mc404/aulas/pdfs/Art%20Of%20Intel%20x86%20Assembly.pdf
 
 http://ps-2.kev009.com/wisclibrary/aix52/usr/share/man/info/en_US/a_doc_lib/aixassem/alangref/pseudo_ops_ovrvw.htm
+
+https://medium.com/@jain.sm/invoking-a-system-call-via-assembly-84c9f8832105
 
 https://medium.com/@jain.sm/invoking-a-system-call-via-assembly-84c9f8832105
 
@@ -76,7 +86,7 @@ The operand field's interpretation is dependent on the contents of the operation
 
 Register is a temporary storage or working location built into the CPU itself (separate from memory). they are processor components that hold data and address.  
 
-The 16 integer registers are 64 bits wide and are called:
+The 16 integer registers are 64 bits wide and are called: click [here](https://en.wikibooks.org/wiki/X86_Assembly/X86_Architecture) for more informations.
 
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10  R11  R12  R13  R14  R15
 

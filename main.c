@@ -6,7 +6,7 @@
 /*   By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 17:13:33 by zqadiri           #+#    #+#             */
-/*   Updated: 2020/12/22 13:49:26 by zqadiri          ###   ########.fr       */
+/*   Updated: 2020/12/23 09:20:03 by zqadiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,11 +222,11 @@ void check_strdup()
 
 int main()
 {	
-	// check_strcpy();
+	check_strcpy();
 	check_write();
-	// check_read();
-	// check_strdup();
-	// check_strcpy();
-	// check_strcmp();
-	// check_strlen();
+	check_read();
+	check_strdup();
+	check_strcpy();
+	check_strcmp();
+	check_strlen();
 }
