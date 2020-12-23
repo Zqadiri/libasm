@@ -115,6 +115,30 @@ The number is called the displacement; the plain register is called the base; th
 
 #### [Immediate operands](http://www.c-jump.com/CIS77/ASM/Instructions/I77_0170_immediate_operands.htm#:~:text=An%20immediate%20operand%20is%20a,the%20instruction%20at%20assembly%20time.&text=If%20the%20source%20operand%20is,the%20result%20of%20the%20operation.).
 
+## Syscalls :
+
+A system call allows a userspace program to interface with kernel.
+The protection mechanism provided by Linux doesn’t allow a userspace programto directly invoke the Kernel. Instead it needs cooperation with some hardware via software interrupts to transition from userspace to kernel space. 
+This prevents userspace program to interfere with the kernel protection mechanisms. 
+
+To clearly understand how syscalls works check this out :
+https://fasterthanli.me/series/reading-files-the-hard-way/part-2
+
+## errno :
+
+errno is a preprocessor macro used for error indication. It expands to a static (until C++11) thread-local (since C++11) modifiable lvalue of type int.
+
+Several standard library functions indicate errors by writing positive integers to errno. Typically, the value of errno is set to one of the error codes, listed in <cerrno> as macro constants that begin with the letter E, followed by uppercase letters or digits.
+
+The value of errno is ​0​ at program startup, and although library functions are allowed to write positive integers to errno whether or not an error occurred, library functions never store ​0​ in errno.
+
+https://en.wikipedia.org/wiki/Errno.h
+
+https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm
+
+
+
+
 
 
 
