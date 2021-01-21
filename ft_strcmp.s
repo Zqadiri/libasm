@@ -1,10 +1,3 @@
-; 1st arg           Stack           EBX               RDI            RDI
-; 2nd arg           Stack           ECX               RSI            RSI
-; 3rd arg           Stack           EDX               RDX            RDX
-; 4th arg           Stack           ESI               RCX            R10
-; 5th arg           Stack           EDI               R8             R8
-; 6th arg           Stack           EBP               R9  
-
 ; Copies the contents of the source operand (register or memory location) to the destination 
 ; operand (register) and zero extends the value to 16 or 32 bits
 ; Sign extension  is the operation  of increasing the number of bits of a binary number 
@@ -19,13 +12,13 @@
 
 bits 64
 
-global _ft_strcmp
-
 section .text
 
+global _ft_strcmp
+
 _ft_strcmp:
-	mov 	rax, 0		; set rax to 0
-	jmp		compare		; call compare
+	mov 	rax, 0
+	jmp		compare
 
 compare:
 	mov		al, BYTE [rdi]	; al is the least significant byte in ax (8 bits)
@@ -45,5 +38,4 @@ exit:
     movzx	rax, al			
     movzx	rbx, bl
     sub		rax, rbx		; stock the difference of rax and rbx in rax
-    ;return the difference  
 	ret

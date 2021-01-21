@@ -5,7 +5,8 @@
 ; This prevents userspace program to interfere with the kernel protection mechanisms.
 ; https://fasterthanli.me/series/reading-files-the-hard-way/part-2
 
-section .text  
+section .text
+ 
     global _ft_read
     extern ___error
 

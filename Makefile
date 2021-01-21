@@ -6,7 +6,7 @@
 #    By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/18 16:54:47 by zqadiri           #+#    #+#              #
-#    Updated: 2020/12/22 13:46:35 by zqadiri          ###   ########.fr        #
+#    Updated: 2021/01/21 14:33:22 by zqadiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,7 @@ $(NAME):
 
 try: all
 	@touch test
-	@
-	gcc -Wall -Wextra -Werror -I./libasm.h libasm.a main.c -o try_libasm -fsanitize=address
+	@gcc -Wall -Wextra -Werror -I./libasm.h libasm.a main.c -o try_libasm -fsanitize=address
 	./try_libasm
 
 re: fclean $(NAME)

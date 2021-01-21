@@ -1,9 +1,12 @@
-; 1st arg           Stack           EBX               RDI            RDI
-; 2nd arg           Stack           ECX               RSI            RSI
-; 3rd arg           Stack           EDX               RDX            RDX
-; 4th arg           Stack           ESI               RCX            R10
-; 5th arg           Stack           EDI               R8             R8
-; 6th arg           Stack           EBP               R9  
+; add enomem
+; it tries to allocate enough memory to hold the old string
+; (plus a '\0' character to mark the end of the string).
+
+; If the allocation failed, it sets errno to ENOMEM and returns NULL immediately. 
+;Setting of errno to ENOMEM is something malloc does in POSIX so we don't need to explicitly do it in our strdup. If you're not POSIX compliant, ISO C doesn't actually mandate the existence of ENOMEM so I haven't included that here(b).
+
+; Otherwise the allocation worked so we copy the old string to the new string(c)
+; and return the new address (which the caller is responsible for freeing at some point).
 
 bits 64
 

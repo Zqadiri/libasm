@@ -22,6 +22,8 @@ https://www.tutorialspoint.com/assembly_programming/index.htm
 
 others:
 
+https://en.wikipedia.org/wiki/Kernel_(operating_system)#System_calls
+
 https://www.cs.virginia.edu/~evans/cs216/guides/x86.html
 
 http://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf

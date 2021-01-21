@@ -6,52 +6,60 @@
 /*   By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 17:13:33 by zqadiri           #+#    #+#             */
-/*   Updated: 2020/12/23 09:20:03 by zqadiri          ###   ########.fr       */
+/*   Updated: 2021/01/08 17:59:06 by zqadiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libasm.h"
 
-void check_strlen()
+void		check_strlen(void)
 {
-	char *empty = "";
-	char *hello_world = "Hello   world !";
-	char *alphabet = "abcdefghijklgcmnopqrstuvwxyz";
+	char *empty;
+	char *hello_world;
+	char *alphabet;
 
+	empty = "";
+	hello_world = "Hello   world !";
+	alphabet = "abcdefghijklgcmnopqrstuvwxyz";
 	printf("\n================================\n");
 	printf("========== FT_STRLEN ===========\n");
 	printf("================================\n\n");
 	printf("%-20s: \"%s\"\n", "char *", empty);
 	printf("\n");
-	printf("%-20s: %zu\n", "libc", strlen(empty));	
+	printf("%-20s: %zu\n", "libc", strlen(empty));
 	printf("%-20s: %zu\n", "libasm", ft_strlen(empty));
 	printf("\n");
 	printf("%-20s: \"%s\"\n", "char *", hello_world);
 	printf("\n");
-	printf("%-20s: %zu\n", "libc", strlen(hello_world));	
+	printf("%-20s: %zu\n", "libc", strlen(hello_world));
 	printf("%-20s: %zu\n", "libasm", ft_strlen(hello_world));
 	printf("\n");
 	printf("%-20s: \"%s\"\n", "char *", alphabet);
 	printf("\n");
-	printf("%-20s: %zu\n", "libc", strlen(alphabet));	
+	printf("%-20s: %zu\n", "libc", strlen(alphabet));
 	printf("%-20s: %zu\n", "libasm", ft_strlen(alphabet));
 	printf("\n");
 }
 
-void clear_buffer(char *buffer, int size)
+void		clear_buffer(char *buffer, int size)
 {
-	int i = 0;
+	int i;
+
+	i = 1;
 	while (i < size)
 		buffer[i++] = 0;
 }
 
-void check_strcpy()
+void		check_strcpy(void)
 {
-	char buffer[50];
-	char *empty = "";
-	char *hello_world = "Hello world !";
-	char *alphabet = "abcdefghijklmnopqrstuvwxyz1233454";
+	char	buffer[50];
+	char	*empty;
+	char	*hello_world;
+	char	*alphabet;
 	
+	empty = "";
+	hello_world = "Hello world !";
+	alphabet = "abcdefghijklmnopqrstuvwxyz1233454";
 	printf("\n================================\n");
 	printf("========== FT_STRCPY ===========\n");
 	printf("================================\n\n");
@@ -74,13 +82,17 @@ void check_strcpy()
 	clear_buffer(buffer, 30);
 	printf("\n");
 }
-void check_strcmp()
+void		check_strcmp(void)
 {
-	char *empty = "";
-	char *hello_world = "Hello world !";
-	char *hello_human = "Hello  !";
-	char *hello_world2 = "Hello world !";
+	char 	*empty;
+	char 	*hello_world;
+	char 	*hello_human;
+	char 	*hello_world2;
 	
+	empty = "";
+	hello_world = "Hello world !";
+	hello_human = "Hello  !";
+	hello_world2 = "Hello world !";
 	printf("\n================================\n");
 	printf("========== FT_STRCMP ===========\n");
 	printf("================================\n\n");
@@ -101,45 +113,43 @@ void check_strcmp()
 	printf("\n");
 }
 
-void check_write()
+void		check_write(void)
 {
-	char *hello_world = "hello world";
-	char *empty = "|  |";
+	char 	*hello_world;
+	char 	*empty;
 
+	hello_world = "hello world";
+	empty = "|  |";
 	printf("\n================================\n");
 	printf("========== FT_WRITE ============\n");
 	printf("================================\n\n");
-
 	printf("%-20s: \"%s\"\n", "char *", hello_world);
-	printf("\n");
 	printf("\tLibc:%zu\n", write(1, hello_world, 11));
 	printf("\n");
 	printf("\tLibasm:%zu\n", ft_write(1, hello_world, 11));
 	printf("\n");
-	
 	printf("%-20s: \"%s\"\n", "char *", empty);
 	printf("\n");
-	printf("\tLibc:%zu\n",  write(1, empty, 4));
+	printf("\tLibc:%zu\n", write(1, empty, 4));
 	printf("\n");
-	printf("\tLibasm:%zu\n",  ft_write(1, empty, 4));
+	printf("\tLibasm:%zu\n", ft_write(1, empty, 4));
 	printf("\n");
-	
 	printf("%-20s: \"%s\"\n", "char *", hello_world);
-	printf("\n");
 	printf("Libc:%zu\n", write(-7, NULL, 7));
 	printf("\n");
-	printf("Libasm:%zu\n",  ft_write(-7, NULL, 7));
-	printf("\n");	
+	printf("Libasm:%zu\n", ft_write(-7, NULL, 7));
+	printf("\n");
 }
 
-void check_read()
+void		check_read(void)
 {
-	char buff1[891];
-	int ret = 1;
+	char	buff1[891];
+	int		ret;
+	int		fd;
+
 	printf("\n================================\n");
 	printf("========== FT_READ =============\n");
 	printf("================================\n\n");
-	
 	printf("%-20s: \n", "wrong file descriptor | libc ");
 	ret = read(-7, buff1, 890);
 	printf("[return : %d]\n|%s|\n", ret, buff1);
@@ -150,8 +160,7 @@ void check_read()
 	printf("[return : %d]\n|%s|\n", ret, buff1);
 	printf("\n");
 	clear_buffer(buff1, 891);
-	
-	int fd = open("main.c", O_RDONLY);
+	fd = open("main.c", O_RDONLY);
 	printf("%-20s: \n", "header main.c | libc ");
 	ret = read(fd, buff1, 890);
 	buff1[ret] = 0;
@@ -159,7 +168,6 @@ void check_read()
 	printf("\n");
 	close(fd);
 	clear_buffer(buff1, 891);
-	
 	fd = open("main.c", O_RDONLY);
 	printf("%-20s: \n", "header main.c | libasm ");
 	ret = ft_read(fd, buff1, 890);
@@ -168,8 +176,7 @@ void check_read()
 	printf("\n");
 	close(fd);
 	clear_buffer(buff1, 891);
-
-	fd = open("test", O_RDONLY);	
+	fd = open("test", O_RDONLY);
 	printf("%-20s: \n", "file test | libc ");
 	ret = read(fd, buff1, 890);
 	buff1[ret] = 0;
@@ -187,13 +194,15 @@ void check_read()
 	close(fd);
 }
 
-void check_strdup()
+void		check_strdup(void)
 {
-	char *hello_world = "Hello world !";
-	char *empty = "     ,      ";
-	char *save;
-	char *save2;
-	
+	char	*hello_world = "Hello world !";
+	char	*empty = "     ,      ";
+	char	*save;
+	char	*save2;
+
+	hello_world = "Hello world !";
+	empty = "     ,      ";
 	printf("\n================================\n");
 	printf("========== FT_STRDUP ===========\n");
 	printf("================================\n\n");
@@ -207,7 +216,6 @@ void check_strdup()
 	free(save2);
 	save2 = NULL;
 	printf("\n");
-
 	printf("%-20s: \"%s\"\n", "char *", empty);
 	save = strdup(empty);
 	printf("%-20s: \"%s\"\n", "libc", save);
@@ -220,8 +228,8 @@ void check_strdup()
 	printf("\n");
 }
 
-int main()
-{	
+int		main(void)
+{
 	check_strcpy();
 	check_write();
 	check_read();
