@@ -137,15 +137,3 @@ The value of errno is ​0​ at program startup, and although library functions
 https://en.wikipedia.org/wiki/Errno.h
 
 https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm
-
-
-
-
-
-
-
-
-
-
-
-

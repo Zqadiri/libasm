@@ -16,20 +16,25 @@ global _ft_strdup
 extern _ft_strlen
 extern _malloc
 extern _ft_strcpy
+extern ___error
 
 _ft_strdup:
-    call _ft_strlen   ; rax get the length of arg0
-    mov  rcx, rax    ; move the length to rcx
-    inc  rcx         ; inc rcx so we can add \0
-    push rdi         ; save the string address into the stack
-    mov  rdi, rcx
-    call _malloc
-    cmp  rax, 0
-    je   exit
-    pop  rsi 
-    mov  rdi, rax
-    call _ft_strcpy
-    jmp  exit
-
-exit:
-    ret
+	call _ft_strlen
+	cmp rax, 0
+	inc rax
+	push rdi
+	mov rdi, rax
+	call _malloc
+	cmp rax, 0
+	je _exit
+	pop rdi
+	mov rsi, rdi
+	mov rdi, rax
+	call _ft_strcpy
+	ret
+_exit:
+	call ___error
+	mov rdi, 12
+	mov [rax], rdi
+	mov rax, 0
+	ret
