@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+// /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "./libasm.h"
+#include <unistd.h>
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -30,13 +31,13 @@ void		check_strlen(void)
 {
 	char *empty;
 	char *hello_world;
-	char *alphabet;
-	char *alphabet2;
+	char *long_string;
+	char *long_string2;
 
 	empty = "";
 	hello_world = "Hello   world !";
-	alphabet = "abcdefghijklgcmnopqrstuvwxyz";
-	alphabet2 = "				   ";
+	long_string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+	long_string2 = "				                           ";
 	printf("\n================================\n");
 	printf("========== FT_STRLEN ===========\n");
 	printf("================================\n\n");
@@ -50,15 +51,15 @@ void		check_strlen(void)
 	printf("%-20s: %zu\n", "libc", strlen(hello_world));
 	printf("%-20s: %zu\n", "libasm", ft_strlen(hello_world));
 	printf("\n");
-	printf("%-20s: \"%s\"\n", "char *", alphabet);
+	printf("%-20s: \"%s\"\n", "char *", long_string);
 	printf("\n");
-	printf("%-20s: %zu\n", "libc", strlen(alphabet));
-	printf("%-20s: %zu\n", "libasm", ft_strlen(alphabet));
+	printf("%-20s: %zu\n", "libc", strlen(long_string));
+	printf("%-20s: %zu\n", "libasm", ft_strlen(long_string));
 	printf("\n");
-	printf("%-20s: \"%s\"\n", "char *", alphabet2);
+	printf("%-20s: \"%s\"\n", "char *", long_string2);
 	printf("\n");
-	printf("%-20s: %zu\n", "libc", strlen(alphabet2));
-	printf("%-20s: %zu\n", "libasm", ft_strlen(alphabet2));
+	printf("%-20s: %zu\n", "libc", strlen(long_string2));
+	printf("%-20s: %zu\n", "libasm", ft_strlen(long_string2));
 	printf("\n");
 }
 
@@ -73,42 +74,42 @@ void		clear_buffer(char *buffer, int size)
 
 void		check_strcpy(void)
 {
-	char	buffer[50];
+	char	buffer[445];
 	char	*empty;
-	char	*empty2;
+	char	*spaces;
 	char	*hello_world;
-	char	*alphabet;
+	char	*long_string;
 	
 	empty = "";
-	empty2 = "         ";
+	spaces = "         ";
 	hello_world = "Hello world !";
-	alphabet = "abcdefghijklm   stuvwxyz1233454";
+	long_string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 	printf("\n================================\n");
 	printf("========== FT_STRCPY ===========\n");
 	printf("================================\n\n");
 	printf("%-20s: \"%s\"\n", "char *", empty);
 	printf("%-20s: \"%s\"\n", "libc", strcpy(buffer, empty));	
-	clear_buffer(buffer, 30);
+	clear_buffer(buffer, 445);
 	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, empty));	
-	clear_buffer(buffer, 30);
+	clear_buffer(buffer, 445);
 	printf("\n");
 	printf("%-20s: \"%s\"\n", "char *", hello_world);
 	printf("%-20s: \"%s\"\n", "libc", strcpy(buffer, hello_world));	
-	clear_buffer(buffer, 30);
+	clear_buffer(buffer, 445);
 	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, hello_world));	
-	clear_buffer(buffer, 30);
+	clear_buffer(buffer, 445);
 	printf("\n");
-	printf("%-20s: \"%s\"\n", "char *", alphabet);
-	printf("%-20s: \"%s\"\n", "libc", strcpy(buffer, alphabet));	
-	clear_buffer(buffer, 30);
-	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, alphabet));
-	clear_buffer(buffer, 30);
+	printf("%-20s: \"%s\"\n", "char *", long_string);
+	printf("%-20s: \"%s\"\n", "libc", strcpy(buffer, long_string));	
+	clear_buffer(buffer, 445);
+	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, long_string));
+	clear_buffer(buffer, 445);
 	printf("\n");
-	printf("%-20s: \"%s\"\n", "char *", empty2);
-	printf("%-20s: \"%s\"\n", "libc", strcpy(buffer, empty2));	
-	clear_buffer(buffer, 30);
-	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, empty2));
-	clear_buffer(buffer, 30);
+	printf("%-20s: \"%s\"\n", "char *", spaces);
+	printf("%-20s: \"%s\"\n", "libc", strcpy(buffer, spaces));	
+	clear_buffer(buffer, 445);
+	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, spaces));
+	clear_buffer(buffer, 445);
 	printf("\n");
 }
 void		check_strcmp(void)
@@ -150,27 +151,33 @@ void		check_write(void)
 {
 	char 	*hello_world;
 	char 	*empty;
+	char	*spaces;
 
-	hello_world = "hello world";
-	empty = "|  |";
+	spaces = "     ";
+	hello_world = "Hello  world";
+	empty = "";
 	printf("\n================================\n");
 	printf("========== FT_WRITE ============\n");
 	printf("================================\n\n");
 	printf("%-20s: \"%s\"\n", "char *", hello_world);
-	printf("\tLibc:%zu\n", write(1, hello_world, 11));
+	printf("\t\tLibc:%zu\n", write(1, hello_world, strlen(hello_world)));
 	printf("\n");
-	printf("\tLibasm:%zu\n", ft_write(1, hello_world, 11));
-	printf("\n");
+	printf("\t\tLibasm:%zu\n", ft_write(1, hello_world, strlen(hello_world)));
+	printf("\n\n");
 	printf("%-20s: \"%s\"\n", "char *", empty);
+	printf("\t\t\tLibc:%zu\n", write(1, empty, strlen(empty)));
 	printf("\n");
-	printf("\tLibc:%zu\n", write(1, empty, 4));
-	printf("\n");
-	printf("\tLibasm:%zu\n", ft_write(1, empty, 4));
-	printf("\n");
+	printf("\t\t\tLibasm:%zu\n", ft_write(1, empty, strlen(empty)));
+	printf("\n\n");
 	printf("%-20s: \"%s\"\n", "char *", hello_world);
-	printf("Libc:%zu\n", write(-7, NULL, 7));
+	printf("\t\t\tLibc:%zu\n", write(-7, NULL, 7));
 	printf("\n");
-	printf("Libasm:%zu\n", ft_write(-7, NULL, 7));
+	printf("\t\t\tLibasm:%zu\n", ft_write(-7, NULL, 7));
+	printf("\n\n");
+	printf("%-20s: \"%s\"\n", "char *", spaces);
+	printf("\t\t\tLibc:%zu\n",write(1, spaces, 5));
+	printf("\n");
+	printf("\t\t\tLibasm:%zu\n", ft_write(1, spaces, 5));
 	printf("\n");
 }
 
@@ -234,12 +241,12 @@ void		check_read(void)
 void		check_strdup(void)
 {
 	char	*hello_world = "Hello world !";
-	char	*empty = "           ";
+	char	*empty = "";
+	char	*spaces = "        ";
+	char	*long_string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 	char	*save;
 	char	*save2;
 
-	hello_world = "Hello world !";
-	empty = "     ,      ";
 	printf("\n================================\n");
 	printf("========== FT_STRDUP ===========\n");
 	printf("================================\n\n");
@@ -253,6 +260,7 @@ void		check_strdup(void)
 	free(save2);
 	save2 = NULL;
 	printf("\n");
+
 	printf("%-20s: \"%s\"\n", "char *", empty);
 	save = strdup(empty);
 	printf("%-20s: \"%s\"\n", "libc", save);
@@ -263,6 +271,29 @@ void		check_strdup(void)
 	free(save2);
 	save2 = NULL;
 	printf("\n");
+
+	printf("%-20s: \"%s\"\n", "char *", spaces);
+	save = strdup(spaces);
+	printf("%-20s: \"%s\"\n", "libc", save);
+	free(save);
+	save = NULL;
+	save2 = ft_strdup(spaces);
+	printf("%-20s: \"%s\"\n", "libasm", save2);
+	free(save2);
+	save2 = NULL;
+	printf("\n");
+
+	printf("%-20s: \"%s\"\n", "char *", long_string);
+	save = strdup(long_string);
+	printf("%-20s: \"%s\"\n", "libc", save);
+	free(save);
+	save = NULL;
+	save2 = ft_strdup(long_string);
+	printf("%-20s: \"%s\"\n", "libasm", save2);
+	free(save2);
+	save2 = NULL;
+	printf("\n");
+	
 }
 
 int		main(void)

@@ -109,7 +109,7 @@ These are the basic forms of addressing:
 
 * [ number ]
 * [ reg ]
-* [ reg + reg*scale ]      scale is 1, 2, 4, or 8 only
+* [ reg + reg * scale ]      scale is 1, 2, 4, or 8 only
 * [ reg + number ]
 * [ reg + reg*scale + number ]
 
