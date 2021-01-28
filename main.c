@@ -6,7 +6,7 @@
 /*   By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 17:13:33 by zqadiri           #+#    #+#             */
-/*   Updated: 2021/01/27 14:44:52 by zqadiri          ###   ########.fr       */
+/*   Updated: 2021/01/28 11:09:49 by zqadiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,12 @@ void		check_strlen(void)
 	char *empty;
 	char *hello_world;
 	char *alphabet;
+	char *alphabet2;
 
 	empty = "";
 	hello_world = "Hello   world !";
 	alphabet = "abcdefghijklgcmnopqrstuvwxyz";
+	alphabet2 = "				   ";
 	printf("\n================================\n");
 	printf("========== FT_STRLEN ===========\n");
 	printf("================================\n\n");
@@ -53,6 +55,11 @@ void		check_strlen(void)
 	printf("%-20s: %zu\n", "libc", strlen(alphabet));
 	printf("%-20s: %zu\n", "libasm", ft_strlen(alphabet));
 	printf("\n");
+	printf("%-20s: \"%s\"\n", "char *", alphabet2);
+	printf("\n");
+	printf("%-20s: %zu\n", "libc", strlen(alphabet2));
+	printf("%-20s: %zu\n", "libasm", ft_strlen(alphabet2));
+	printf("\n");
 }
 
 void		clear_buffer(char *buffer, int size)
@@ -68,31 +75,39 @@ void		check_strcpy(void)
 {
 	char	buffer[50];
 	char	*empty;
+	char	*empty2;
 	char	*hello_world;
 	char	*alphabet;
 	
 	empty = "";
+	empty2 = "         ";
 	hello_world = "Hello world !";
 	alphabet = "abcdefghijklm   stuvwxyz1233454";
 	printf("\n================================\n");
 	printf("========== FT_STRCPY ===========\n");
 	printf("================================\n\n");
-	printf("%-20s: \"%s\"\n", "char []", empty);
+	printf("%-20s: \"%s\"\n", "char *", empty);
 	printf("%-20s: \"%s\"\n", "libc", strcpy(buffer, empty));	
 	clear_buffer(buffer, 30);
 	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, empty));	
 	clear_buffer(buffer, 30);
 	printf("\n");
-	printf("%-20s: \"%s\"\n", "char []", hello_world);
+	printf("%-20s: \"%s\"\n", "char *", hello_world);
 	printf("%-20s: \"%s\"\n", "libc", strcpy(buffer, hello_world));	
 	clear_buffer(buffer, 30);
 	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, hello_world));	
 	clear_buffer(buffer, 30);
 	printf("\n");
-	printf("%-20s: \"%s\"\n", "char []", alphabet);
+	printf("%-20s: \"%s\"\n", "char *", alphabet);
 	printf("%-20s: \"%s\"\n", "libc", strcpy(buffer, alphabet));	
 	clear_buffer(buffer, 30);
 	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, alphabet));
+	clear_buffer(buffer, 30);
+	printf("\n");
+	printf("%-20s: \"%s\"\n", "char *", empty2);
+	printf("%-20s: \"%s\"\n", "libc", strcpy(buffer, empty2));	
+	clear_buffer(buffer, 30);
+	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, empty2));
 	clear_buffer(buffer, 30);
 	printf("\n");
 }
@@ -219,7 +234,7 @@ void		check_read(void)
 void		check_strdup(void)
 {
 	char	*hello_world = "Hello world !";
-	char	*empty = "     ,      ";
+	char	*empty = "           ";
 	char	*save;
 	char	*save2;
 
@@ -252,11 +267,11 @@ void		check_strdup(void)
 
 int		main(void)
 {
-	// check_strcpy();
-	// check_write();
-	// check_read();
+	check_strcpy();
+	check_write();
+	check_read();
 	check_strdup();
-	// check_strcpy();
-	// check_strcmp();
-	// check_strlen();
+	check_strcpy();
+	check_strcmp();
+	check_strlen();
 }

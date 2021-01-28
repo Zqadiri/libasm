@@ -6,7 +6,7 @@
 #    By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/18 16:54:47 by zqadiri           #+#    #+#              #
-#    Updated: 2021/01/21 14:33:22 by zqadiri          ###   ########.fr        #
+#    Updated: 2021/01/28 11:16:59 by zqadiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,3 +39,5 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+	rm test
+	rm try_libasm
