@@ -20,7 +20,11 @@ https://cs.lmu.edu/~ray/notes/nasmtutorial/
 
 https://www.tutorialspoint.com/assembly_programming/index.htm
 
+https://www.nasm.us/doc/
+
 others:
+
+https://plantation-productions.com/Webster/www.artofasm.com/Linux/HTML/MemoryAccessandOrg.html
 
 https://en.wikipedia.org/wiki/Kernel_(operating_system)#System_calls
 
