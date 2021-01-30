@@ -6,7 +6,7 @@
 #    By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/18 16:54:47 by zqadiri           #+#    #+#              #
-#    Updated: 2021/01/29 17:09:30 by zqadiri          ###   ########.fr        #
+#    Updated: 2021/01/30 09:27:03 by zqadiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(NAME):
 
 try: all
 	@touch test
-	@gcc -Wall -Wextra -Werror -I ./libasm.h libasm.a main.c -o try_libasm
+	gcc -Wall -Wextra -Werror -I ./libasm.h libasm.a main.c -o try_libasm
 	./try_libasm
 
 re: fclean $(NAME)
@@ -47,3 +47,4 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+	rm -f test try_libasm

@@ -120,7 +120,7 @@ void		check_strcmp(void)
 	char 	*hello_world2;
 	
 	empty = "";
-	hello_world = "hello world !";
+	hello_world = "Hello world !";
 	hello_human = "Ello  !";
 	hello_world2 = "Hello world !";
 	printf("\n================================\n");
@@ -298,11 +298,11 @@ void		check_strdup(void)
 
 int		main(void)
 {
-	// check_strcpy();
-	// check_write();
-	// check_read();
+	check_strcpy();
+	check_write();
+	check_read();
 	check_strdup();
-	// check_strcpy();
-	// check_strcmp();
-	// check_strlen();
+	check_strcpy();
+	check_strcmp();
+	check_strlen();
 }

@@ -4,7 +4,6 @@ section .text
 
     global _ft_strcpy
 
-
 ; ft_strcpy(arg0 = rdi = dst, arg1 = rsi = src)
 ; rdi will be dest and rsi will be src
 ; cl in the low byte of rcx (16 bits)
