@@ -128,6 +128,8 @@ The protection mechanism provided by Linux doesn’t allow a userspace programto
 This prevents userspace program to interfere with the kernel protection mechanisms. 
 
 To clearly understand how syscalls works check this out :
+http://labe.felk.cvut.cz/~stepan/33OSD/files/e0-asm-syscalls.pdf
+
 https://fasterthanli.me/series/reading-files-the-hard-way/part-2
 
 ## errno :
@@ -139,5 +141,7 @@ Several standard library functions indicate errors by writing positive integers 
 The value of errno is ​0​ at program startup, and although library functions are allowed to write positive integers to errno whether or not an error occurred, library functions never store ​0​ in errno.
 
 https://en.wikipedia.org/wiki/Errno.h
+
+https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/intro.2.html
 
 https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm

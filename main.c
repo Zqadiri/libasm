@@ -6,7 +6,7 @@
 /*   By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 17:13:33 by zqadiri           #+#    #+#             */
-/*   Updated: 2021/01/30 09:34:08 by zqadiri          ###   ########.fr       */
+/*   Updated: 2021/02/03 18:22:42 by zqadiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,10 +152,12 @@ void		check_write(void)
 	char 	*hello_world;
 	char 	*empty;
 	char	*spaces;
+	char	*long_string;
 
 	spaces = "     ";
 	hello_world = "Hello  world";
 	empty = "";
+	long_string = "  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 	printf("\n================================\n");
 	printf("========== FT_WRITE ============\n");
 	printf("================================\n\n");
@@ -178,6 +180,12 @@ void		check_write(void)
 	printf("\t\t\tLibc:%zu\n",write(1, spaces, 5));
 	printf("\n");
 	printf("\t\t\tLibasm:%zu\n", ft_write(1, spaces, 5));
+	printf("\n\n");
+	printf("%-20s: \"%s\"\n", "char *", long_string);
+	printf("\n");
+	printf("\t\t\tLibc:%zu\n",write(1, long_string, strlen(long_string)));
+	printf("\n");
+	printf("\t\t\tLibasm:%zu\n", ft_write(1, long_string, strlen(long_string)));
 	printf("\n");
 }
 
@@ -298,11 +306,11 @@ void		check_strdup(void)
 
 int		main(void)
 {
-	check_strcpy();
+	// check_strcpy();
 	check_write();
-	check_read();
-	check_strdup();
-	check_strcpy();
-	check_strcmp();
-	check_strlen();
+	// check_read();
+	// check_strdup();
+	// check_strcpy();
+	// check_strcmp();
+	// check_strlen();
 }
