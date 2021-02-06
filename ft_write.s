@@ -17,6 +17,5 @@ exit_error:
     push    rax                ; save errno in the top of the stack 
     call    ___error           ; rax is now points to external variable errno.
     pop     qword[rax]         ; The QWORD PTR is just a size specifier (It means that a 64 bit value is read from the address)
-    ; mov     [rax], rax
     mov     rax, -1 
 	ret
