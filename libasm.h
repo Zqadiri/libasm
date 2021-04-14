@@ -6,7 +6,7 @@
 /*   By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 11:17:21 by zqadiri           #+#    #+#             */
-/*   Updated: 2021/02/03 18:02:12 by zqadiri          ###   ########.fr       */
+/*   Updated: 2021/04/14 15:30:52 by zqadiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <errno.h>
+
+
+# define RESET   "\033[0m"
+# define RED     "\033[31m"
+# define GREEN   "\033[32m"
+# define BUFFER_SIZE 512
 
 size_t		ft_strlen(const char *str);
 char		*ft_strcpy(char *dst, const char *src);

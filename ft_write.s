@@ -1,21 +1,21 @@
-;https://stackoverflow.com/questions/64820365/what-is-the-relation-between-carry-flag-and-syscall-in-assembly-x64-intel-syn
+; system calls are requests the program can pass to an OS to carry out
+; some tasks the the program itself can't do
 
-bits 64
+global _ft_write
+extern ___error
 
-section .text
-
-	global _ft_write
-	extern ___error
+    section .text
 
 _ft_write:
-    mov     rax,  0x02000004   ;  set call to write
-    syscall
-    jc      exit_error         ; if doesn't work, write set flags carry to 1 so jmp exit error
-   	ret                        ; ex 9 EBADF Bad file descriptor.
+    mov     rax,  0x02000004   ;  mov the syscall number to the register
+    syscall                     
+    ; the kernel syscall will set or clear the carry flag according to whether an error occurred
+    jc      exit_error         ; if doesn't work, write set carry to 1
+   	ret                        ; if no error occurred, rax contains the system call's return value in this case the number of bytes written is returned
 
 exit_error:
-    push    rax                ; save errno in the top of the stack 
-    call    ___error           ; rax is now points to external variable errno.
+    push    rax                ; if an error did occur, eax contains the error code (it's normally a 32-bit value, since errno is an int)
+    call    ___error           ; retrieve address to errno
     pop     qword[rax]         ; The QWORD PTR is just a size specifier (It means that a 64 bit value is read from the address)
-    mov     rax, -1 
+    mov     rax, -1
 	ret

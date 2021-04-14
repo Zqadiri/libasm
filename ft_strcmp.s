@@ -1,13 +1,12 @@
-bits 64
+global _ft_strcmp
 
-section .text
+	section .text
 
-	global _ft_strcmp
 ; al the lower 8bits of the rax 
 ; bl the lower 8bits of the rbx
 
 _ft_strcmp:
-	mov 	rax, 0
+	xor		rax, rax
 
 compare:
 	mov		al, byte[rdi] 
