@@ -1,4 +1,4 @@
-global _ft_write
+global _ft_read
 extern ___error
 
 	section .text
@@ -15,4 +15,4 @@ exit_error:
 	call    ___error           ; retrieve address to errno
 	pop     qword[rax]         ; The QWORD PTR is just a size specifier (It means that a 64 bit value is read from the address)
 	mov     rax, -1
-	ret							; return
+	ret

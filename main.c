@@ -6,7 +6,7 @@
 /*   By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 17:13:33 by zqadiri           #+#    #+#             */
-/*   Updated: 2021/04/14 15:34:55 by zqadiri          ###   ########.fr       */
+/*   Updated: 2021/04/16 11:06:26 by zqadiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,31 +161,33 @@ void		check_write(void)
 	printf("\n================================\n");
 	printf("========== FT_WRITE ============\n");
 	printf("================================\n\n");
-	printf("%-20s: \"%s\"\n", "char *", hello_world);
-	printf("\t\tLibc:%zu\n", write(1, hello_world, strlen(hello_world)));
+	printf("%-20s: \"%s\"\n\n", "char *", hello_world);
+	printf("\t\tLibc (output):%zu\n", write(1, hello_world, strlen(hello_world)));
 	printf("\n");
-	printf("\t\tLibasm:%zu\n", ft_write(1, hello_world, strlen(hello_world)));
+	printf("\t\tLibasm (output):%zu\n", ft_write(1, hello_world, strlen(hello_world)));
 	printf("\n\n");
 	printf("%-20s: \"%s\"\n", "char *", empty);
-	printf("\t\t\tLibc:%zu\n", write(1, empty, strlen(empty)));
+	printf("\t\t\tLibc (output):%zu\n", write(1, empty, strlen(empty)));
 	printf("\n");
-	printf("\t\t\tLibasm:%zu\n", ft_write(1, empty, strlen(empty)));
+	printf("\t\t\tLibasm (output):%zu\n", ft_write(1, empty, strlen(empty)));
 	printf("\n\n");
-	printf("%-20s: \"%s\"\n", "char *", hello_world);
-	printf("\t\t\tLibc:%zu\n", write(-7, NULL, 7));
+	printf("%-20s: \"%s\"\n\n", "char *", hello_world);
+	printf("Libc (output):\t\t%zu\t\t\n", write(-7, NULL, 7));
+	perror("Error C:");
 	printf("\n");
-	printf("\t\t\tLibasm:%zu\n", ft_write(-7, NULL, 7));
+	printf("Libasm (output):\t\t%zu\t\t\n", ft_write(-7, NULL, 7));
+	perror("Error ASM:");
 	printf("\n\n");
 	printf("%-20s: \"%s\"\n", "char *", spaces);
-	printf("\t\t\tLibc:%zu\n",write(1, spaces, 5));
+	printf("\t\t\tLibc (output):%zu\n",write(1, spaces, 5));
 	printf("\n");
-	printf("\t\t\tLibasm:%zu\n", ft_write(1, spaces, 5));
+	printf("\t\t\tLibasm (output):%zu\n", ft_write(1, spaces, 5));
 	printf("\n\n");
 	printf("%-20s: \"%s\"\n", "char *", long_string);
 	printf("\n");
-	printf("\t\t\tLibc:%zu\n",write(1, long_string, strlen(long_string)));
+	printf("\n\n\tLibc (output):%zu\n",write(1, long_string, strlen(long_string)));
 	printf("\n");
-	printf("\t\t\tLibasm:%zu\n", ft_write(1, long_string, strlen(long_string)));
+	printf("\n\n\tLibasm (output):%zu\n", ft_write(1, long_string, strlen(long_string)));
 	printf("\n");
 }
 
@@ -306,11 +308,11 @@ void		check_strdup(void)
 
 int		main(void)
 {
-	// check_strcpy();
+	check_strcpy();
 	check_write();
-	// check_read();
-	// check_strdup();
-	// check_strcpy();
-	// check_strcmp();
-	// check_strlen();
+	check_read();
+	check_strdup();
+	check_strcpy();
+	check_strcmp();
+	check_strlen();
 }

@@ -44,7 +44,9 @@ http://ps-2.kev009.com/wisclibrary/aix52/usr/share/man/info/en_US/a_doc_lib/aixa
 
 https://medium.com/@jain.sm/invoking-a-system-call-via-assembly-84c9f8832105
 
-https://medium.com/@jain.sm/invoking-a-system-call-via-assembly-84c9f8832105
+https://stackoverflow.com/questions/64820365/what-is-the-relation-between-carry-flag-and-syscall-in-assembly-x64-intel-syn
+
+https://stackoverflow.com/questions/47834513/64-bit-syscall-documentation-for-macos-assembly
 
 ## Assembly language :
 
