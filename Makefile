@@ -6,7 +6,7 @@
 #    By: zqadiri <zqadiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/18 16:54:47 by zqadiri           #+#    #+#              #
-#    Updated: 2021/04/16 11:09:36 by zqadiri          ###   ########.fr        #
+#    Updated: 2021/04/16 12:25:26 by zqadiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,9 +51,9 @@ re: fclean $(NAME)
 
 clean:
 	@rm -rf $(OBJ)
-	@echo 'delete all the object files from the directory ..'
+	@echo 'deleting all the object files from the directory ..'
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -f test try_libasm try_libasm_2
-	@echo 'delete the executable file ..'
+	@echo 'the executable file deleted successfully ..'
 	
